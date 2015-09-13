@@ -10,3 +10,6 @@ dataSelection$NewDate <- paste(dataSelection$Date, dataSelection$Time)
 dataSelection$NewDate2 <- dmy_hms(dataSelection$NewDate) 
 with(dataSelection[!is.na(dataSelection$NewDate2),], plot(NewDate2, Global_active_power, type="l", xlab="", ylab = "Global Active Power (kilowatts)"))
 
+dev.copy(png, file="plot2.png", width = 480, height = 480, bg ="white")
+dev.off()
+
